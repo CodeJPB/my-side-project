@@ -26,6 +26,11 @@
     "cosmos": "cosmos",
     "cosmos:export": "cosmos-export"
   },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/components/**/*.{js,jsx,ts,tsx}"
+    ]
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
