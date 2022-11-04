@@ -1,11 +1,12 @@
 import React from "react";
 import "./App.css";
-import MyButton from "./components/MyButton/MyButton";
+import MyCvOnline from "./components/MyCvOnline/MyCvOnline";
+import { cv } from "./data/cv";
 
 function App() {
   return (
     <div className="App">
-      <MyButton text="Click me !" />
+      <MyCvOnline cv={cv} />
     </div>
   );
 }
