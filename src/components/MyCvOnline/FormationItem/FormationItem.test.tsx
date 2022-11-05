@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen, getByText } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { FormationItem } from "./FormationItem";
 import { cv } from "../../../data/cv";
 
@@ -8,7 +8,7 @@ const formationTest = cv.formations[0];
 describe("FormationItem", () => {
   test("Renders main informations", () => {
     render(<FormationItem {...formationTest} />);
-    const title = screen.getByText(formationTest.title);
+    const title = screen.getByText(formationTest.title, { exact: false });
     expect(title).toBeInTheDocument();
     const school = screen.getByText(formationTest.school, { exact: false });
     expect(school).toBeInTheDocument();

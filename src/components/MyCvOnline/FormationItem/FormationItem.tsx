@@ -1,7 +1,7 @@
-import { Formation } from "../../../models/cv.model";
+import { CvFormation } from "../MyCvOnline.model";
 import "./FormationItem.css";
 
-export const FormationItem: React.FC<Formation> = ({
+export const FormationItem: React.FC<CvFormation> = ({
   title,
   from,
   to,
