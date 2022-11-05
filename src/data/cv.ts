@@ -10,7 +10,8 @@ export const cv : Cv = {
             to: new Date(),
             title: "BTS Optique à Paris",
             graduation: "BAC +2",
-            description: "Ipsum lorem"
+            description: "Ipsum lorem",
+            school: "Saint thomas"
         }
     ],
     experiments: [

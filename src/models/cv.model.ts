@@ -15,6 +15,7 @@ export interface Formation {
     title: string;
     description: string;
     graduation: string;
+    school: string;
 }
 
 export interface Experiment {
