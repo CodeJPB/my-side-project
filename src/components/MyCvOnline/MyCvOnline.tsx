@@ -1,4 +1,7 @@
 import { Cv } from "../../models/cv.model";
+import { ExperimentItem } from "./ExperimentItem/ExperimentItem";
+import { FormationItem } from "./FormationItem/FormationItem";
+import { SectionItem } from "./SectionItem/SectionItem";
 import "./MyCvOnline.css";
 
 interface MyCvOnlineProps {
@@ -12,38 +15,26 @@ export const MyCvOnline: React.FC<MyCvOnlineProps> = ({ cv }) => (
       My name is {cv.firstName} <b>{cv.lastName}</b>, it's a pleasure to meet
       you.
     </h2>
-    <section>
-      <h2>Experiments</h2>
-      <ul>
-        {cv.experiments.map((d) => (
-          <li key={d.title}>{d.title}</li>
-        ))}
-      </ul>
-    </section>
-    <section>
-      <h2>Formations</h2>
-      <ul>
-        {cv.formations.map((d) => (
-          <li key={d.title}>{d.title}</li>
-        ))}
-      </ul>
-    </section>
-    <section>
-      <h2>Languages</h2>
-      <ul>
-        {cv.languages.map((d) => (
-          <li key={d}>{d}</li>
-        ))}
-      </ul>
-    </section>
-    <section>
-      <h2>Interests</h2>
-      <ul>
-        {cv.languages.map((d) => (
-          <li key={d}>{d}</li>
-        ))}
-      </ul>
-    </section>
+    <SectionItem title="Experiments">
+      {cv.experiments.map((d) => (
+        <ExperimentItem key={d.title} {...d} />
+      ))}
+    </SectionItem>
+    <SectionItem title="Formations">
+      {cv.formations.map((d) => (
+        <FormationItem key={d.title} {...d} />
+      ))}
+    </SectionItem>
+    <SectionItem title="Languages">
+      {cv.languages.map((d) => (
+        <li key={d}>{d}</li>
+      ))}
+    </SectionItem>
+    <SectionItem title="Interests">
+      {cv.interests.map((d) => (
+        <li key={d}>{d}</li>
+      ))}
+    </SectionItem>
   </section>
 );
 
