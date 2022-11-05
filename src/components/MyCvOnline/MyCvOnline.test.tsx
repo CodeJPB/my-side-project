@@ -1,4 +1,3 @@
-import React from "react";
 import { render, screen } from "@testing-library/react";
 import { MyCvOnline } from "./MyCvOnline";
 import { cv } from "../../data/cv";
@@ -6,19 +5,6 @@ import { cv } from "../../data/cv";
 /**
  * We use mock component to emulate a shallow rendering of MyCvOnline component
  */
-
-/**
- * Mock Experiment component
- */
-// const mockSectionItem = jest.fn();
-// const MOCK_SECTION_ITEM_TXT = "Mock section";
-// jest.mock("./SectionItem/SectionItem.tsx", () => ({
-//   __esModule: true,
-//   SectionItem: (props: unknown) => {
-//     mockSectionItem(props);
-//     return <p>{MOCK_SECTION_ITEM_TXT}</p>;
-//   },
-// }));
 
 /**
  * Mock Formation component
@@ -46,6 +32,19 @@ jest.mock("./ExperimentItem/ExperimentItem.tsx", () => ({
   },
 }));
 
+/**
+ * Mock Language component
+ */
+const mockLanguageItem = jest.fn();
+const MOCK_LANGUAGE_ITEM_TXT = "Mock language";
+jest.mock("./LanguageItem/LanguageItem.tsx", () => ({
+  __esModule: true,
+  LanguageItem: (props: unknown) => {
+    mockLanguageItem(props);
+    return <p>{MOCK_LANGUAGE_ITEM_TXT}</p>;
+  },
+}));
+
 describe("MyCvOnline", () => {
   test("Renders main informations", () => {
     render(<MyCvOnline cv={cv} />);
@@ -69,17 +68,5 @@ describe("MyCvOnline", () => {
     render(<MyCvOnline cv={cv} />);
     const sectionGroups = screen.getAllByRole("group");
     expect(sectionGroups.length).toEqual(4);
-  });
-  test("Renders a list of formations", () => {
-    render(<MyCvOnline cv={cv} />);
-    expect(mockFormationItem).toHaveBeenCalledTimes(cv.formations.length);
-    const formationItems = screen.getAllByText(MOCK_FORMATION_ITEM_TXT);
-    expect(formationItems.length).toEqual(cv.formations.length);
-  });
-  test("Renders a list of experiments", () => {
-    render(<MyCvOnline cv={cv} />);
-    expect(mockExperimentItem).toHaveBeenCalledTimes(cv.experiments.length);
-    const experimentItems = screen.getAllByText(MOCK_FORMATION_ITEM_TXT);
-    expect(experimentItems.length).toEqual(cv.experiments.length);
   });
 });

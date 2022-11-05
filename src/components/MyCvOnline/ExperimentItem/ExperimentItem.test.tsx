@@ -8,7 +8,7 @@ const experimentTest = cv.experiments[0];
 describe("ExperimentItem", () => {
   test("Renders main inexperiments", () => {
     render(<ExperimentItem {...experimentTest} />);
-    const title = screen.getByText(experimentTest.title);
+    const title = screen.getByText(experimentTest.title, { exact: false });
     expect(title).toBeInTheDocument();
     const employer = screen.getByText(experimentTest.employer);
     expect(employer).toBeInTheDocument();

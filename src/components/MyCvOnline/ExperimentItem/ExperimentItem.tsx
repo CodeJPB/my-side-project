@@ -1,7 +1,7 @@
-import { Experiment } from "../../../models/cv.model";
+import { CvExperiment } from "../MyCvOnline.model";
 import "./ExperimentItem.css";
 
-export const ExperimentItem: React.FC<Experiment> = ({
+export const ExperimentItem: React.FC<CvExperiment> = ({
   title,
   from,
   to,
