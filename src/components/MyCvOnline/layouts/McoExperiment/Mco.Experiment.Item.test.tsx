@@ -1,20 +1,19 @@
-import React from "react";
 import { render, screen } from "@testing-library/react";
-import { ExperimentItem } from "./ExperimentItem";
-import { cv } from "../../../data/cv";
+import { McoExperimentItem } from "./..";
+import { cvExemple as cv } from "./../../__seed__/cv.exemple";
 
 const experimentTest = cv.experiments[0];
 
-describe("ExperimentItem", () => {
+describe("McoExperimentItem", () => {
   test("Renders main inexperiments", () => {
-    render(<ExperimentItem {...experimentTest} />);
+    render(<McoExperimentItem {...experimentTest} />);
     const title = screen.getByText(experimentTest.title, { exact: false });
     expect(title).toBeInTheDocument();
     const employer = screen.getByText(experimentTest.employer);
     expect(employer).toBeInTheDocument();
   });
   test("Renders dates in correct format", () => {
-    render(<ExperimentItem {...experimentTest} />);
+    render(<McoExperimentItem {...experimentTest} />);
     const dateToStr = screen.getAllByText(experimentTest.to.toDateString(), {
       exact: true,
     })[0];

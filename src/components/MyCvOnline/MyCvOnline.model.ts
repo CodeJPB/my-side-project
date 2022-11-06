@@ -1,25 +1,32 @@
-export interface Cv {
+import { EMcoLanguage } from "./MyCvOnline.constant";
+
+export interface IMcoProps {
+    main: IMcoMainInformation;
+    experiments: IMcoExperiment[];
+    formations: IMcoFormation[];
+    languages: IMcoLanguage[];
+    interests: IMcoInterest[];
+}
+
+export interface IMcoMainInformation {
     firstName: string;
     lastName: string;
     email: string;
     about: string;
-    experiments: CvExperiment[];
-    formations: CvFormation[];
-    languages: CvLanguage[];
-    interests: CvInterest[];
+    imgUrl?:string;
+    available: boolean;
 }
 
-
-export interface CvFormation {
+export interface IMcoFormation {
     title: string;
     from : Date;
     to: Date;
     description: string;
     graduation: string;
-    school: string;
+    school: string;  
 }
 
-export interface CvExperiment {
+export interface IMcoExperiment {
     title: string;
     from : Date;
     to: Date;
@@ -27,18 +34,11 @@ export interface CvExperiment {
     employer: string;
 }
 
-
-
-export enum ECvLanguage {
-    EN = "Anglais",
-    FR = "Français"
+export type IMcoLanguage = {
+    title: EMcoLanguage;
 }
 
-export type CvLanguage = {
-    title: ECvLanguage;
-}
-
-export type CvInterest = {
+export type IMcoInterest = {
     title: string;
     img?: string;
 }

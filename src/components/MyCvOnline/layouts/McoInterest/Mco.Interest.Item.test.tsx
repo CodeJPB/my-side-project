@@ -1,12 +1,12 @@
 import { render, screen } from "@testing-library/react";
-import { InterestItem } from "./InterestItem";
-import { cv } from "../../../data/cv";
+import { McoInterestItem } from "./Mco.Interest.Item";
+import { cvExemple as cv } from "../../__seed__/cv.exemple";
 
 const interestTest = cv.interests[0];
 
-describe("InterestItem", () => {
+describe("McoInterestItem", () => {
   test("Renders title passed in props", () => {
-    render(<InterestItem {...interestTest} />);
+    render(<McoInterestItem {...interestTest} />);
     const title = screen.getByText(interestTest.title);
     expect(title).toBeInTheDocument();
   });

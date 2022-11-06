@@ -1,7 +1,9 @@
-import { CvFormation } from "../MyCvOnline.model";
-import "./FormationItem.css";
+import { IMcoFormation } from "./../../MyCvOnline.model";
+import "./Mco.Formation.Item.scss";
 
-export const FormationItem: React.FC<CvFormation> = ({
+const RCN = "mco__formation__item";
+
+export const McoFormationItem: React.FC<IMcoFormation> = ({
   title,
   from,
   to,
@@ -9,26 +11,24 @@ export const FormationItem: React.FC<CvFormation> = ({
   graduation,
   school,
 }) => (
-  <div role="listitem" key={title} className="formation-item">
+  <div key={title} className={RCN} role="listitem">
     <h2>{title}</h2>
     <h3>
       {school} / {graduation}
     </h3>
     <div>
-      <div className="formation-item__block">
+      <div className={`${RCN}__block`}>
         <label>From:</label>
         <span>{from.toDateString()}</span>
       </div>
-      <div className="formation-item__block">
+      <div className={`${RCN}__block`}>
         <label>To:</label>
         <span>{to.toDateString()}</span>
       </div>
-      <div className="formation-item__block">
+      <div className={`${RCN}__block`}>
         <label>description</label>
         <span>{description}</span>
       </div>
     </div>
   </div>
 );
-
-export default FormationItem;

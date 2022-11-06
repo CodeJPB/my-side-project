@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
-import { MyCvOnline } from "./MyCvOnline";
-import { cv } from "../../data/cv";
+import { MyCvOnline } from "../MyCvOnline";
+import { cvExemple as cv } from "../__seed__/cv.exemple";
 
 /**
  * We use mock component to emulate a shallow rendering of MyCvOnline component
@@ -9,12 +9,12 @@ import { cv } from "../../data/cv";
 /**
  * Mock Formation component
  */
-const mockFormationItem = jest.fn();
+const mockMcoFormationItem = jest.fn();
 const MOCK_FORMATION_ITEM_TXT = "Mock formation";
-jest.mock("./FormationItem/FormationItem.tsx", () => ({
+jest.mock("./McoFormationItem/McoFormationItem.tsx", () => ({
   __esModule: true,
-  FormationItem: (props: unknown) => {
-    mockFormationItem(props);
+  McoFormationItem: (props: unknown) => {
+    mockMcoFormationItem(props);
     return <p>{MOCK_FORMATION_ITEM_TXT}</p>;
   },
 }));
@@ -22,12 +22,12 @@ jest.mock("./FormationItem/FormationItem.tsx", () => ({
 /**
  * Mock Experiment component
  */
-const mockExperimentItem = jest.fn();
+const mockMcoExperimentItem = jest.fn();
 const MOCK_EXPERIMENT_ITEM_TXT = "Mock experiment";
-jest.mock("./ExperimentItem/ExperimentItem.tsx", () => ({
+jest.mock("./McoExperimentItem/McoExperimentItem.tsx", () => ({
   __esModule: true,
-  ExperimentItem: (props: unknown) => {
-    mockExperimentItem(props);
+  McoExperimentItem: (props: unknown) => {
+    mockMcoExperimentItem(props);
     return <p>{MOCK_EXPERIMENT_ITEM_TXT}</p>;
   },
 }));
@@ -35,12 +35,12 @@ jest.mock("./ExperimentItem/ExperimentItem.tsx", () => ({
 /**
  * Mock Language component
  */
-const mockLanguageItem = jest.fn();
+const mockMcoLanguageItem = jest.fn();
 const MOCK_LANGUAGE_ITEM_TXT = "Mock language";
-jest.mock("./LanguageItem/LanguageItem.tsx", () => ({
+jest.mock("./McoLanguageItem/McoLanguageItem.tsx", () => ({
   __esModule: true,
-  LanguageItem: (props: unknown) => {
-    mockLanguageItem(props);
+  McoLanguageItem: (props: unknown) => {
+    mockMcoLanguageItem(props);
     return <p>{MOCK_LANGUAGE_ITEM_TXT}</p>;
   },
 }));

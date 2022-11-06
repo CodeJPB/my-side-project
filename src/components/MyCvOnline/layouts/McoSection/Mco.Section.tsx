@@ -1,15 +1,13 @@
 import { PropsWithChildren } from "react";
-import "./CvSection.css";
+import "./Mco.Section.scss";
 
-interface CvSectionProps extends PropsWithChildren {
+interface McoSectionProps extends PropsWithChildren {
   title: string;
 }
 
-export const CvSection: React.FC<CvSectionProps> = ({ title, children }) => (
+export const McoSection: React.FC<McoSectionProps> = ({ title, children }) => (
   <section role="group" className="my-cv-online__section">
     <h2>{title}</h2>
     <div>{children}</div>
   </section>
 );
-
-export default CvSection;

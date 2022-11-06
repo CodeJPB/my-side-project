@@ -1,12 +1,11 @@
-import React from "react";
+import { MyCvOnline } from "./components/MyCvOnline/MyCvOnline";
+import { cvExemple as cv } from "./components/MyCvOnline/__seed__/cv.exemple";
 import "./App.css";
-import MyCvOnline from "./components/MyCvOnline/MyCvOnline";
-import { cv } from "./data/cv";
 
 function App() {
   return (
     <div className="App">
-      <MyCvOnline cv={cv} />
+      <MyCvOnline {...cv} />
     </div>
   );
 }

@@ -1,11 +1,10 @@
-import React from "react";
 import { render, screen } from "@testing-library/react";
-import { CvSection } from "./CvSection";
+import { McoSection } from "./Mco.Section";
 
 describe("MyCvOnline", () => {
   const testContent = "test section";
   test("Renders title passed in props", () => {
-    render(<CvSection title="test">{testContent}</CvSection>);
+    render(<McoSection title="test">{testContent}</McoSection>);
     const content = screen.getByText(testContent);
     expect(content).toBeInTheDocument();
   });
