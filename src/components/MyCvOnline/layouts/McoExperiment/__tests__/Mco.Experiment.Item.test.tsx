@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
-import { McoExperimentItem } from "./..";
-import { cvExemple as cv } from "./../../__seed__/cv.exemple";
+import { McoExperimentItem } from "./../..";
+import { cvExemple as cv } from "../../../__seed__/cv.exemple";
 
 const experimentTest = cv.experiments[0];
 

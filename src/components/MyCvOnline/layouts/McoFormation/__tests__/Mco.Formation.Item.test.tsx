@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
-import { McoFormationItem } from "./Mco.Formation.Item";
-import { cvExemple as cv } from "./../../__seed__/cv.exemple";
+import { McoFormationItem } from "../Mco.Formation.Item";
+import { cvExemple as cv } from "../../../__seed__/cv.exemple";
 
 const formationTest = cv.formations[0];
 

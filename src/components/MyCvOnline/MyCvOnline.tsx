@@ -1,7 +1,7 @@
 import { IMcoProps } from "./MyCvOnline.model";
 import {
   McoHeader,
-  McoLanguages,
+  McoLanguage,
   McoInterest,
   McoFormation,
   McoExperiment,
@@ -15,11 +15,14 @@ export const MyCvOnline: React.FC<IMcoProps> = ({
   languages,
   interests,
 }) => (
-  <McoLayout>
-    <McoHeader {...main} />
-    <McoExperiment data={experiments} />
-    <McoFormation data={formations} />
-    <McoLanguages data={languages} />
-    <McoInterest data={interests} />
-  </McoLayout>
+  <McoLayout
+    header={<McoHeader {...main} />}
+    sections={[
+      <McoExperiment data={experiments} />,
+      <McoFormation data={formations} />,
+      <McoLanguage data={languages} />,
+      <McoInterest data={interests} />,
+    ]}
+    footer={null}
+  />
 );

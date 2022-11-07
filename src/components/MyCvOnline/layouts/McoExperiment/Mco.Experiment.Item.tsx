@@ -1,4 +1,4 @@
-import { IMcoExperiment } from "./../../MyCvOnline.model";
+import { IMcoExperiment } from "../../MyCvOnline.model";
 import "./Mco.Experiment.Item.scss";
 
 const RCN = "mco__experiment__item";

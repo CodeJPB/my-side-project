@@ -1,0 +1,12 @@
+import { render, screen } from "@testing-library/react";
+import { McoLayout } from "./Mco.Layout";
+
+describe("McoLayout", () => {
+  test("Renders children passed in props", () => {
+    const testContent = "mco layout test";
+    const TestChild = <p>{testContent}</p>;
+    render(<McoLayout>{TestChild}</McoLayout>);
+    const content = screen.getByText(testContent);
+    expect(content).toBeInTheDocument();
+  });
+});

@@ -6,7 +6,7 @@ import { McoLayout } from "./McoLayout/Mco.Layout";
 import { McoExperiment } from "./McoExperiment/Mco.Experiment";
 import { McoFormation } from "./McoFormation/Mco.Formation";
 import { McoInterest } from "./McoInterest/Mco.Interest";
-import { McoLanguages } from "./McoLanguage/Mco.Language";
+import { McoLanguage } from "./McoLanguage/Mco.Language";
 import { McoHeader } from "./McoHeader/Mco.Header";
 import { McoSection } from "./McoSection/Mco.Section";
 
@@ -19,7 +19,7 @@ export {
   McoExperiment,
   McoFormation,
   McoInterest,
-  McoLanguages,
+  McoLanguage,
   McoHeader,
   McoSection,
 };

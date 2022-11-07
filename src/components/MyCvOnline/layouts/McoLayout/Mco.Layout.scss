@@ -1,3 +1,25 @@
-.my-cv-layout {
-  background-color: blue;
+.mco__layout {
+  display: grid;
+  grid-template-areas:
+    'a a'
+    'b b'
+    'c c';
+  .mco__layout__header {
+    display: grid;
+    grid-area: a;
+    height: 200px;
+    text-align: center;
+  }
+  .mco__layout__section {
+    display: grid;
+    grid-area: b;
+    min-height: 100px;
+    .mco__layout__section_item {
+      min-height: 50px;
+    }
+  }
+  .mco__layout__footer {
+    display: grid;
+    grid-area: c;
+  }
 }

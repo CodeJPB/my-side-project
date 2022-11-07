@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
-import { McoInterestItem } from "./Mco.Interest.Item";
-import { cvExemple as cv } from "../../__seed__/cv.exemple";
+import { McoInterestItem } from "./../Mco.Interest.Item";
+import { cvExemple as cv } from "./../../../__seed__/cv.exemple";
 
 const interestTest = cv.interests[0];
 

@@ -6,7 +6,7 @@ interface McoLanguageProps {
   data: IMcoLanguage[];
 }
 
-export const McoLanguages: React.FC<McoLanguageProps> = ({ data }) => (
+export const McoLanguage: React.FC<McoLanguageProps> = ({ data }) => (
   <McoSection title={McoSectionName.LANGUAGES}>
     {data.map((d) => (
       <McoLanguageItem key={d.title} {...d} />
